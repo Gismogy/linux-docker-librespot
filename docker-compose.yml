@@ -1,0 +1,20 @@
+version: "3.9"
+services:
+  app:
+    image: ubuntu
+    network_mode: host
+    volumes:
+      - ./app:/app
+      - ./scripts:/scripts
+      - "/etc/asound.conf:/etc/asound.conf"
+      - "/etc/alsa:/etc/alsa"
+    environment:
+      LIBRESPOT_USERNAME:
+      LIBRESPOT_PASSWORD:
+      LIBRESPOT_ARGS: "-n spotifyNuc -b 320 --enable-volume-normalisation --initial-volume 100"
+    cap_add:
+      - NET_ADMIN
+      - NET_BIND_SERVICE
+    devices:
+      - "/dev/snd:/dev/snd"
+    command: sh /scripts/startup.sh
