@@ -44,3 +44,6 @@ ctl.!default {
 1. Clone the repository: git clone https://github.com/Gismogy/linux-docker-librespot.git
 2. Navigate to the project directory: cd linux-docker-librespot
 3. Start the application using Docker Compose: docker-compose up -d
+
+## Future updates :
+Change SH Script to dockerFile. 
